@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = "Feed data Page";
+}
+
+<style>
+    .table {
+        border:solid 1px grey;
+        width:400px;
+    }
+
+    .twoHr {
+        margin-bottom: 5px;
+    }
+
+    .fiveTopMargin {
+        margin-top: 5px;
+    }
+
+    .button {
+        width: 100px;
+        height: 25px;
+    }
+
+    .center {
+        text-align:center;
+    }
+
+    .leftMargin {
+        margin-left: 5px;
+
+    }
+
+
+</style>
+
+<div class="table twoHr ">
+    <div class="row twoHr fiveTopMargin leftMargin">
+        <div class="col-md-4">
+            <label id="lblTite">Title:</label>
+        </div>
+        <div class="col-md-4">
+            <input type="text" id="txtTitle" />
+        </div>
+
+    </div>
+    <div class="row twoHr leftMargin">
+        <div class="col-md-4">
+            <label id="lblSender">Sender:</label>
+        </div>
+        <div class="col-md-4">
+            <input type="text" id="txtSender" />
+        </div>
+    </div>
+    <div class="row twoHr leftMargin">
+        <div class="col-md-4">
+            <label id="lblMessage">Message:</label>
+        </div>
+        <div class="col-md-4">
+            <input type="text" id="txtMessage" />
+        </div>
+    </div>
+    <div class="row twoHr leftMargin">
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-4 center">
+            <input type="button" class="button" id="btnPost" value="Send" onclick="publishMessage();"/>
+        </div>
+    </div>
+    <div id="dvResult" class="success" ></div>
+</div>

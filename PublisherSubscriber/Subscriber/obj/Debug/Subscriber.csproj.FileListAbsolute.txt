@@ -1,0 +1,5 @@
+C:\Users\Rupendra Sharma\Desktop\SiteCore interview\WCFSample\WF_WCF_Samples\WCF\Scenario\DesignPatterns\ListBasedPublishSubscribe\CS\Subscriber\bin\Debug\Subscriber.exe.config
+C:\Users\Rupendra Sharma\Desktop\SiteCore interview\WCFSample\WF_WCF_Samples\WCF\Scenario\DesignPatterns\ListBasedPublishSubscribe\CS\Subscriber\bin\Debug\Subscriber.exe
+C:\Users\Rupendra Sharma\Desktop\SiteCore interview\WCFSample\WF_WCF_Samples\WCF\Scenario\DesignPatterns\ListBasedPublishSubscribe\CS\Subscriber\bin\Debug\Subscriber.pdb
+C:\Users\Rupendra Sharma\Desktop\SiteCore interview\WCFSample\WF_WCF_Samples\WCF\Scenario\DesignPatterns\ListBasedPublishSubscribe\CS\Subscriber\obj\Debug\Subscriber.exe
+C:\Users\Rupendra Sharma\Desktop\SiteCore interview\WCFSample\WF_WCF_Samples\WCF\Scenario\DesignPatterns\ListBasedPublishSubscribe\CS\Subscriber\obj\Debug\Subscriber.pdb

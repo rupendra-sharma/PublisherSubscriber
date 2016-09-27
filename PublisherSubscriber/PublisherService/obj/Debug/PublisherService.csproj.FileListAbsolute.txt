@@ -1,0 +1,5 @@
+C:\Users\Rupendra Sharma\Desktop\SiteCore interview\WCFSample\WF_WCF_Samples\WCF\Scenario\DesignPatterns\ListBasedPublishSubscribe\CS\PublisherService\bin\PublisherService.dll.config
+C:\Users\Rupendra Sharma\Desktop\SiteCore interview\WCFSample\WF_WCF_Samples\WCF\Scenario\DesignPatterns\ListBasedPublishSubscribe\CS\PublisherService\bin\PublisherService.dll
+C:\Users\Rupendra Sharma\Desktop\SiteCore interview\WCFSample\WF_WCF_Samples\WCF\Scenario\DesignPatterns\ListBasedPublishSubscribe\CS\PublisherService\bin\PublisherService.pdb
+C:\Users\Rupendra Sharma\Desktop\SiteCore interview\WCFSample\WF_WCF_Samples\WCF\Scenario\DesignPatterns\ListBasedPublishSubscribe\CS\PublisherService\obj\Debug\PublisherService.dll
+C:\Users\Rupendra Sharma\Desktop\SiteCore interview\WCFSample\WF_WCF_Samples\WCF\Scenario\DesignPatterns\ListBasedPublishSubscribe\CS\PublisherService\obj\Debug\PublisherService.pdb

@@ -1,0 +1,4 @@
+C:\Users\Rupendra Sharma\Desktop\SiteCore interview\PublisherSubscriber\PublisherSubscriber\PublisherSubscriber\bin\Debug\PublisherSubscriber.dll
+C:\Users\Rupendra Sharma\Desktop\SiteCore interview\PublisherSubscriber\PublisherSubscriber\PublisherSubscriber\bin\Debug\PublisherSubscriber.pdb
+C:\Users\Rupendra Sharma\Desktop\SiteCore interview\PublisherSubscriber\PublisherSubscriber\PublisherSubscriber\obj\Debug\PublisherSubscriber.dll
+C:\Users\Rupendra Sharma\Desktop\SiteCore interview\PublisherSubscriber\PublisherSubscriber\PublisherSubscriber\obj\Debug\PublisherSubscriber.pdb
