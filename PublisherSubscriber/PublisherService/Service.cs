@@ -1,4 +1,5 @@
-﻿///@Author : Rupendra sharma
+﻿using System;
+///@Author : Rupendra sharma
 ///
 ///
 using System.ServiceModel;
@@ -25,9 +26,20 @@ namespace MessageService
         /// </summary>
         public void Subscribe()
         {
-            callback = OperationContext.Current.GetCallbackChannel<IServiceClientContract>();
-            messageHandler = new MessageEventHandler(MessageEventCallBackHandler);
-            MessageEvent += messageHandler;
+            try
+            {
+                callback = OperationContext.Current.GetCallbackChannel<IServiceClientContract>();
+                messageHandler = new MessageEventHandler(MessageEventCallBackHandler);
+                MessageEvent += messageHandler;
+            }
+            catch (AddressAlreadyInUseException ex)
+            {
+                throw new FaultException("The client end point address is already in use, release the port or use different port");
+            }
+            catch (Exception ex)
+            {
+                throw new FaultException("Error in subscribe, details:" + ex.Message);
+            }
         }
 
         
@@ -48,12 +60,23 @@ namespace MessageService
         /// <param name="messageBody">Message body</param>
         public void PublishMessage(string sender, string title, string messageBody)
         {
-            MessageEventArgs message = new MessageEventArgs();
-            message.sender = sender;
-            message.title = title;
-            message.messageBody = messageBody;
-            //execute the event
-            MessageEvent(this, message);
+            try
+            {
+                MessageEventArgs message = new MessageEventArgs();
+                message.sender = sender;
+                message.title = title;
+                message.messageBody = messageBody;
+                //execute the event
+                MessageEvent(this, message);
+            }
+            catch (FaultException fex)
+            {
+                throw new FaultException(fex.Message);
+            }
+            catch (Exception ex)
+            {
+                throw new FaultException("Not able to publish to the client, reson:" + ex.Message);
+            }
         }
 
         /// <summary>
