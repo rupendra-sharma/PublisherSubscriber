@@ -34,11 +34,15 @@ namespace MessageService
             }
             catch (AddressAlreadyInUseException ex)
             {
-                throw new FaultException("The client end point address is already in use, release the port or use different port");
+                throw new FaultException(new FaultReason(ex.Message), new FaultCode("Sender"));
+            }
+            catch (ApplicationException ex) 
+            {
+                throw new FaultException<ApplicationException>(ex, new FaultReason(ex.Message), new FaultCode("Sender"));
             }
             catch (Exception ex)
             {
-                throw new FaultException("Error in subscribe, details:" + ex.Message);
+                throw new FaultException(new FaultReason(ex.Message), new FaultCode("Sender"));
             }
         }
 
@@ -69,13 +73,9 @@ namespace MessageService
                 //execute the event
                 MessageEvent(this, message);
             }
-            catch (FaultException fex)
-            {
-                throw new FaultException(fex.Message);
-            }
             catch (Exception ex)
             {
-                throw new FaultException("Not able to publish to the client, reson:" + ex.Message);
+                throw new FaultException(new FaultReason(ex.Message), new FaultCode("Sender"));
             }
         }
 

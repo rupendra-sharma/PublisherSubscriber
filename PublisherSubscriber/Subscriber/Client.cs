@@ -17,18 +17,34 @@ namespace MessageService
         /// 
         /// </summary>
         /// <param name="args"></param>
+        /// 
+
+        static ServiceContractClient client;
+
         static void Main(string[] args)
         {
-            
-            InstanceContext site = new InstanceContext(null, new Client());
-            ServiceContractClient client = new ServiceContractClient(site);
+            try
+            {
+                InstanceContext site = new InstanceContext(null, new Client());
+                using (client = new ServiceContractClient(site))
+                {
 
-            //unique callback address so multiple clients can run on one machine
-            WSDualHttpBinding binding = (WSDualHttpBinding)client.Endpoint.Binding;
-            string clientcallbackaddress = binding.ClientBaseAddress.AbsoluteUri;
-            clientcallbackaddress += Guid.NewGuid().ToString();
-            binding.ClientBaseAddress = new Uri(clientcallbackaddress);
-            
+                    //unique callback address so multiple clients can run on one machine
+                    WSDualHttpBinding binding = (WSDualHttpBinding)client.Endpoint.Binding;
+                    string clientcallbackaddress = binding.ClientBaseAddress.AbsoluteUri;
+                    clientcallbackaddress += Guid.NewGuid().ToString();
+                    binding.ClientBaseAddress = new Uri(clientcallbackaddress);
+                }
+
+            }
+            catch (EndpointNotFoundException ex) 
+            {
+                Console.WriteLine("Error in connecting with the service end point, details: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in connecting with the service end point, details: " + ex.Message);
+            }
 
             //Subscribe.
             Console.WriteLine("Subscribing");
